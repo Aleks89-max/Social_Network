@@ -19,6 +19,13 @@ const Dialogs = (props:dType) => {
         .map((m) => <Message message={m.message} id={m.id}/>)
 
 
+    let newMessageElement = React.createRef<HTMLTextAreaElement>()
+    let addMessage = () => {
+     let text =  newMessageElement.current?.value;
+     alert(text)
+    }
+
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
@@ -29,6 +36,10 @@ const Dialogs = (props:dType) => {
 
                 {messagesElements}
 
+            </div>
+            <div>
+                <textarea ref={newMessageElement}>Привет</textarea>
+                <button onClick={addMessage}>Add</button>
             </div>
         </div>
     )

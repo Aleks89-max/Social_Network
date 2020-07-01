@@ -4,7 +4,11 @@ import {MessagesType} from "../../../Redux/State";
 
 const Message = (props:MessagesType) => {
     return (
-        <div className={s.message}>{props.message}</div>
+        <div>
+            <div className={s.message}>{props.message}
+            </div>
+
+        </div>
     )
 }
 

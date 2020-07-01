@@ -11,6 +11,7 @@ import Navbar from "./Cmponents/NavBar/Navbar";
 import {StateType} from "./Redux/State";
 type AppPropsType = {
     state: StateType
+    addPost: (message:string) => void
 }
 
 function App( props: AppPropsType ) {
@@ -24,7 +25,7 @@ function App( props: AppPropsType ) {
 
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' render={() => <Dialogs data = {props.state.dialogsPage} />}/>
-                    <Route path='/profile' render={() => <Profile posts = {props.state.profilePage} />}/>
+                    <Route path='/profile' render={() => <Profile posts = {props.state.profilePage} addPost={props.addPost} />}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
